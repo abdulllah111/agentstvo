@@ -1,0 +1,17 @@
+{
+  "name": "deen-website",
+  "version": "1.0.0",
+  "description": "D.E.E.N Digital Agency Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "sass": "sass --watch css/styles.scss:css/styles.css --style compressed"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.32.13"
+  }
+} 

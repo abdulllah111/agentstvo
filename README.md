@@ -1,63 +1,63 @@
-# D.E.E.N Digital Agency Website
+# D.E.E.N – Digital Agency
 
-Современный одностраничный сайт для диджитал агентства D.E.E.N.
-
-## Особенности
-
-- Современный дизайн
-- Адаптивная верстка
-- Интерактивные элементы
-- Оптимизированная производительность
+Веб-сайт диджитал агентства полного цикла, специализирующегося на разработке, дизайне, автоматизации, маркетинге и SMM.
 
 ## Технологии
 
 - HTML5
-- CSS3 (с использованием SASS)
-- jQuery
+- CSS3 (SCSS)
+- JavaScript (jQuery)
 - Font Awesome
 - Google Fonts
-
-## Установка
-
-1. Клонируйте репозиторий:
-```bash
-git clone https://github.com/yourusername/deen-website.git
-```
-
-2. Установите зависимости:
-```bash
-npm install
-```
-
-3. Запустите компиляцию SASS:
-```bash
-npm run sass
-```
-
-4. Запустите сервер разработки:
-```bash
-npm start
-```
 
 ## Структура проекта
 
 ```
-deen-website/
 ├── css/
-│   ├── styles.scss
-│   └── styles.css
+│   ├── styles.css
+│   └── styles.scss
 ├── js/
+│   ├── jquery-3.7.1.min.js
 │   └── main.js
-├── images/
-├── index.html
-├── package.json
-└── README.md
+├── src/
+│   └── img/
+│       ├── command/
+│       └── portfolio/
+└── index.html
 ```
+
+## Функциональность
+
+- Адаптивный дизайн
+- Анимации при скролле
+- Счетчики статистики
+- Форма обратной связи
+- Мобильное меню
+- Плавный скролл
+- Параллакс эффекты
+- Валидация форм
+
+## Установка и запуск
+
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/your-username/deen-agency.git
+```
+
+2. Откройте `index.html` в браузере или используйте локальный сервер.
 
 ## Разработка
 
-- Основной файл стилей: `css/styles.scss`
-- Основной JavaScript файл: `js/main.js`
+Для работы с SCSS:
+1. Установите зависимости:
+```bash
+npm install
+```
+
+2. Запустите компиляцию SCSS:
+```bash
+npm run sass:watch
+```
 
 ## Лицензия
 
