@@ -579,48 +579,23 @@ body {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
-.contact-form {
-  flex: 1;
-  min-width: 300px;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-
-  input, textarea {
-    width: 100%;
-    padding: 15px;
-    background-color: rgba($text-color, 0.1);
-    border: 1px solid rgba($text-color, 0.2);
-    border-radius: 5px;
-    color: $text-color;
-    @include transition;
-    box-sizing: border-box;
-
-    &:focus {
-      outline: none;
-      border-color: $primary-color;
-      background-color: rgba($text-color, 0.15);
-    }
-  }
-
-  textarea {
-    height: 150px;
-    resize: vertical;
-  }
+.alert-block {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: $text-color;
 }
 
 .form-group {
-  margin-bottom: 0;
+  margin-bottom: 20px;
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .input-group {
@@ -632,8 +607,6 @@ body {
   border-radius: 5px;
   overflow: hidden;
   min-height: 48px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
   
   i {
     color: $primary-color;
@@ -653,11 +626,7 @@ body {
     color: $text-color;
     font-size: 16px;
     height: 100%;
-    display: flex;
-    align-items: center;
-    line-height: 1.5;
-    width: 0;
-    min-width: 0;
+    width: 100%;
     box-sizing: border-box;
     
     &:focus {
@@ -667,7 +636,6 @@ body {
     
     &::placeholder {
       color: rgba($text-color, 0.5);
-      line-height: 1.5;
     }
   }
 }
@@ -678,8 +646,6 @@ body {
   background-repeat: no-repeat;
   background-position: right 15px center;
   padding-right: 40px;
-  display: flex;
-  align-items: center;
   
   option {
     background-color: $dark-bg;
@@ -697,7 +663,8 @@ textarea.form-control {
   color: $text-color;
   resize: vertical;
   min-height: 100px;
-  min-width: 0;
+  font-size: 16px;
+  box-sizing: border-box;
   
   &:focus {
     outline: none;
@@ -711,6 +678,8 @@ textarea.form-control {
   display: block;
   min-height: 1.5rem;
   padding-left: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
   
   .custom-control-input {
     position: absolute;
@@ -727,6 +696,7 @@ textarea.form-control {
     position: relative;
     margin-bottom: 0;
     vertical-align: top;
+    font-size: 14px;
     
     &::before {
       position: absolute;
@@ -769,6 +739,9 @@ textarea.form-control {
   border-radius: 50px;
   font-weight: 500;
   transition: all 0.2s ease;
+  width: 100%;
+  font-size: 16px;
+  box-sizing: border-box;
   
   &:hover {
     background-color: darken($primary-color, 10%);
@@ -830,6 +803,41 @@ textarea.form-control {
       transition: all 0.3s ease;
     }
   }
+
+  .contact-form-wrapper {
+    padding: 20px;
+  }
+  
+  .input-group {
+    min-height: 44px;
+    
+    i {
+      padding: 0 12px;
+      font-size: 16px;
+    }
+    
+    .form-control, .custom-select {
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+  }
+  
+  textarea.form-control {
+    padding: 10px 12px;
+    font-size: 14px;
+    min-height: 80px;
+  }
+  
+  .custom-control {
+    .custom-control-label {
+      font-size: 13px;
+    }
+  }
+  
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -841,87 +849,46 @@ textarea.form-control {
 
   .contact-form-wrapper {
     padding: 15px;
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
   }
-
-  .contact-form {
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-
+  
   .alert-block {
     font-size: 16px;
     margin-bottom: 20px;
-    padding: 0 5px;
-    width: 100%;
-    box-sizing: border-box;
   }
-
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
   .input-group {
-    margin-bottom: 12px;
     min-height: 40px;
-    width: 100%;
-    box-sizing: border-box;
     
     i {
-      padding: 0 8px;
+      padding: 0 10px;
       font-size: 14px;
     }
     
     .form-control, .custom-select {
-      padding: 8px;
+      padding: 8px 10px;
       font-size: 13px;
     }
   }
-
-  .custom-select {
-    padding-right: 25px;
-    background-position: right 8px center;
-  }
-
+  
   textarea.form-control {
-    padding: 8px;
-    min-height: 70px;
+    padding: 8px 10px;
     font-size: 13px;
-    width: 100%;
-    box-sizing: border-box;
+    min-height: 70px;
   }
-
+  
   .custom-control {
-    padding-left: 1.1rem;
-    margin: 0 5px;
-    width: 100%;
-    box-sizing: border-box;
-    
     .custom-control-label {
-      font-size: 13px;
-      width: 100%;
-      box-sizing: border-box;
-      
-      &::before {
-        width: 0.8rem;
-        height: 0.8rem;
-        left: -1.1rem;
-      }
+      font-size: 12px;
     }
   }
-
+  
   .btn-primary {
     padding: 8px 16px;
     font-size: 13px;
-    width: 100%;
-    margin: 0 5px;
-    box-sizing: border-box;
-  }
-
-  .form-group {
-    margin: 0 5px;
-    width: 100%;
-    box-sizing: border-box;
   }
 }
 
