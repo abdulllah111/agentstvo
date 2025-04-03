@@ -574,19 +574,34 @@ body {
   }
 }
 
+.contact-form-wrapper {
+  background-color: rgba($darker-bg, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
 .contact-form {
   flex: 1;
   min-width: 300px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 
   input, textarea {
     width: 100%;
     padding: 15px;
-    // margin-bottom: 20px;
     background-color: rgba($text-color, 0.1);
     border: 1px solid rgba($text-color, 0.2);
     border-radius: 5px;
     color: $text-color;
     @include transition;
+    box-sizing: border-box;
 
     &:focus {
       outline: none;
@@ -598,6 +613,171 @@ body {
   textarea {
     height: 150px;
     resize: vertical;
+  }
+}
+
+.form-group {
+  margin-bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgba($dark-bg, 0.8);
+  border: 1px solid rgba($text-color, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  min-height: 48px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  
+  i {
+    color: $primary-color;
+    padding: 0 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-shrink: 0;
+  }
+  
+  .form-control, .custom-select {
+    flex: 1;
+    padding: 12px 15px;
+    background: none;
+    border: none;
+    color: $text-color;
+    font-size: 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    width: 0;
+    min-width: 0;
+    box-sizing: border-box;
+    
+    &:focus {
+      outline: none;
+      background-color: rgba($dark-bg, 0.9);
+    }
+    
+    &::placeholder {
+      color: rgba($text-color, 0.5);
+      line-height: 1.5;
+    }
+  }
+}
+
+.custom-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FF6F00' d='M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.763L10.825 4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+  
+  option {
+    background-color: $dark-bg;
+    color: $text-color;
+    padding: 10px;
+  }
+}
+
+textarea.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: rgba($dark-bg, 0.8);
+  border: 1px solid rgba($text-color, 0.2);
+  border-radius: 5px;
+  color: $text-color;
+  resize: vertical;
+  min-height: 100px;
+  min-width: 0;
+  
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    background-color: rgba($dark-bg, 0.9);
+  }
+}
+
+.custom-control {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
+  
+  .custom-control-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    
+    &:checked ~ .custom-control-label::before {
+      border-color: $primary-color;
+      background-color: $primary-color;
+    }
+  }
+  
+  .custom-control-label {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+    
+    &::before {
+      position: absolute;
+      top: 0.25rem;
+      left: -1.5rem;
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      pointer-events: none;
+      content: "";
+      background-color: rgba($dark-bg, 0.8);
+      border: 1px solid rgba($text-color, 0.2);
+      border-radius: 0.25rem;
+      transition: all 0.3s ease;
+    }
+    
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.invalid-feedback {
+  display: none;
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border: none;
+  color: $text-color;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    transform: translateY(-2px);
+  }
+  
+  &:disabled {
+    background-color: rgba($primary-color, 0.5);
+    cursor: not-allowed;
   }
 }
 
@@ -649,6 +829,99 @@ body {
       box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
       transition: all 0.3s ease;
     }
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-form-wrapper {
+    padding: 15px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .contact-form {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .alert-block {
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 0 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .input-group {
+    margin-bottom: 12px;
+    min-height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    
+    i {
+      padding: 0 8px;
+      font-size: 14px;
+    }
+    
+    .form-control, .custom-select {
+      padding: 8px;
+      font-size: 13px;
+    }
+  }
+
+  .custom-select {
+    padding-right: 25px;
+    background-position: right 8px center;
+  }
+
+  textarea.form-control {
+    padding: 8px;
+    min-height: 70px;
+    font-size: 13px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .custom-control {
+    padding-left: 1.1rem;
+    margin: 0 5px;
+    width: 100%;
+    box-sizing: border-box;
+    
+    .custom-control-label {
+      font-size: 13px;
+      width: 100%;
+      box-sizing: border-box;
+      
+      &::before {
+        width: 0.8rem;
+        height: 0.8rem;
+        left: -1.1rem;
+      }
+    }
+  }
+
+  .btn-primary {
+    padding: 8px 16px;
+    font-size: 13px;
+    width: 100%;
+    margin: 0 5px;
+    box-sizing: border-box;
+  }
+
+  .form-group {
+    margin: 0 5px;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
@@ -903,178 +1176,5 @@ body {
   }
   50% {
     transform: translateY(-10px);
-  }
-}
-
-// Contact Form Styles
-.contact-form-wrapper {
-  background-color: rgba($darker-bg, 0.95);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.alert-block {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 30px;
-  color: $text-color;
-}
-
-.form-group {
-  margin-bottom: 0;
-}
-
-.input-group {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background-color: rgba($dark-bg, 0.8);
-  border: 1px solid rgba($text-color, 0.2);
-  border-radius: 5px;
-  overflow: hidden;
-  min-height: 48px;
-  margin-bottom: 20px;
-  
-  i {
-    color: $primary-color;
-    padding: 0 15px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-  
-  .form-control, .custom-select {
-    flex: 1;
-    padding: 12px 15px;
-    background: none;
-    border: none;
-    color: $text-color;
-    font-size: 16px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    line-height: 1.5;
-    
-    &:focus {
-      outline: none;
-      background-color: rgba($dark-bg, 0.9);
-    }
-    
-    &::placeholder {
-      color: rgba($text-color, 0.5);
-      line-height: 1.5;
-    }
-  }
-}
-
-.custom-select {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FF6F00' d='M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.763L10.825 4z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  padding-right: 40px;
-  display: flex;
-  align-items: center;
-  
-  option {
-    background-color: $dark-bg;
-    color: $text-color;
-    padding: 10px;
-  }
-}
-
-textarea.form-control {
-  width: 100%;
-  padding: 12px 15px;
-  background-color: rgba($dark-bg, 0.8);
-  border: 1px solid rgba($text-color, 0.2);
-  border-radius: 5px;
-  color: $text-color;
-  resize: vertical;
-  min-height: 100px;
-  
-  &:focus {
-    outline: none;
-    border-color: $primary-color;
-    background-color: rgba($dark-bg, 0.9);
-  }
-}
-
-.custom-control {
-  position: relative;
-  display: block;
-  min-height: 1.5rem;
-  padding-left: 1.5rem;
-  
-  .custom-control-input {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-    
-    &:checked ~ .custom-control-label::before {
-      border-color: $primary-color;
-      background-color: $primary-color;
-    }
-  }
-  
-  .custom-control-label {
-    position: relative;
-    margin-bottom: 0;
-    vertical-align: top;
-    
-    &::before {
-      position: absolute;
-      top: 0.25rem;
-      left: -1.5rem;
-      display: block;
-      width: 1rem;
-      height: 1rem;
-      pointer-events: none;
-      content: "";
-      background-color: rgba($dark-bg, 0.8);
-      border: 1px solid rgba($text-color, 0.2);
-      border-radius: 0.25rem;
-      transition: all 0.3s ease;
-    }
-    
-    a {
-      color: $primary-color;
-      text-decoration: none;
-      
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-.invalid-feedback {
-  display: none;
-  color: #dc3545;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-.btn-primary {
-  background-color: $primary-color;
-  border: none;
-  color: $text-color;
-  padding: 12px 30px;
-  border-radius: 50px;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  
-  &:hover {
-    background-color: darken($primary-color, 10%);
-    transform: translateY(-2px);
-  }
-  
-  &:disabled {
-    background-color: rgba($primary-color, 0.5);
-    cursor: not-allowed;
   }
 } 
