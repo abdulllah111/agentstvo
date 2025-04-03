@@ -105,15 +105,68 @@ $(document).ready(function() {
     observer.observe(this);
   });
 
-  // Анимация при наведении на карточки услуг
+  // Анимация при наведении на карточки услуг (только для десктопа)
   $('.service-card').hover(
     function() {
-      $(this).find('i').addClass('fa-bounce');
+      if (window.innerWidth > 768) {
+        $(this).find('i').addClass('fa-bounce');
+      }
     },
     function() {
-      $(this).find('i').removeClass('fa-bounce');
+      if (window.innerWidth > 768) {
+        $(this).find('i').removeClass('fa-bounce');
+      }
     }
   );
+
+  // Mobile service card center detection and animation
+  if (window.innerWidth <= 768) {
+    let lastActiveCard = null;
+    let scrollTimeout;
+
+    const checkCenterCard = () => {
+      const viewportHeight = $(window).height();
+      const scrollTop = $(window).scrollTop();
+      const viewportCenter = scrollTop + (viewportHeight / 2);
+
+      let closestCard = null;
+      let minDistance = Infinity;
+
+      $('.service-card').each(function() {
+        const cardTop = $(this).offset().top;
+        const cardHeight = $(this).outerHeight();
+        const cardCenter = cardTop + (cardHeight / 2);
+        const distance = Math.abs(cardCenter - viewportCenter);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestCard = $(this);
+        }
+      });
+
+      if (closestCard && closestCard[0] !== lastActiveCard) {
+        // Удаляем анимацию с предыдущей карточки
+        if (lastActiveCard) {
+          $(lastActiveCard).removeClass('active');
+          $(lastActiveCard).find('i').removeClass('fa-bounce');
+        }
+        
+        // Добавляем анимацию новой центральной карточке
+        lastActiveCard = closestCard[0];
+        closestCard.addClass('active');
+        closestCard.find('i').addClass('fa-bounce');
+      }
+    };
+
+    // Проверяем центральную карточку при скролле с debounce
+    $(window).on('scroll', function() {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(checkCenterCard, 100);
+    });
+
+    // Проверяем при загрузке страницы и при изменении размера окна
+    $(window).on('load resize', checkCenterCard);
+  }
 
   // Анимация при наведении на портфолио
   $('.portfolio-item').hover(

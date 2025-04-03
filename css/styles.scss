@@ -637,6 +637,34 @@ body {
   .about-content, .contact-content {
     flex-direction: column;
   }
+
+  .service-card {
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    &.active {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
 }
 
 // Анимации
