@@ -133,11 +133,18 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('../src/img/4.jpg');
+
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    min-height: 600px;
+  }
 
   &:before {
     content: '';
