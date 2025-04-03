@@ -520,8 +520,12 @@ body {
 .contact-form {
   flex: 1;
   min-width: 300px;
+  width: 100%;
+  box-sizing: border-box;
 }
-.contact-form input, .contact-form textarea {
+.contact-form input, 
+.contact-form textarea,
+.contact-form select {
   width: 100%;
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -529,8 +533,9 @@ body {
   border-radius: 5px;
   color: #FFFFFF;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
-.contact-form input:focus, .contact-form textarea:focus {
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
   outline: none;
   border-color: #FF6F00;
   background-color: rgba(255, 255, 255, 0.15);
@@ -569,6 +574,28 @@ body {
   }
   .about-content, .contact-content {
     flex-direction: column;
+  }
+  .contact-form {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  
+  .contact-form input, 
+  .contact-form textarea,
+  .contact-form select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .input-group {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-group {
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 @keyframes fadeInUp {
@@ -801,6 +828,8 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   max-width: 600px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .alert-block {
@@ -950,6 +979,41 @@ textarea.form-control:focus {
 .btn-primary:disabled {
   background-color: rgba(255, 111, 0, 0.5);
   cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .contact-form-wrapper {
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .contact-content {
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .contact-info {
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
