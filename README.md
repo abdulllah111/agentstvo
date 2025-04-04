@@ -61,4 +61,4 @@ npm run sass:watch
 
 ## Лицензия
 
-MIT 
+<p>&copy; 2025 <img src="src/img/ico_for_menu.svg" alt="D.E.E.N" style="height: 20px; vertical-align: middle;">. Все права защищены.</p>
